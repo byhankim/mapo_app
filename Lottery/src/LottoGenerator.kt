@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
         while (lottery.size < 7) {
             lottery.add(Random.nextInt(45)+1)
         }
-        println("$i 번째 게임: $lottery")
+        println("$i 번째 게임: ${lottery}")// .sorted()}")
 //        totalGames.add(lottery)
     }
 }
