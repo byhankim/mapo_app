@@ -13,9 +13,6 @@ fun main(args: Array<String>) {
 //    val totalGames = mutableListOf<Set<Int>>()
     for (i in 1..count) {
         val lottery = mutableSetOf<Int>()
-        for (j in 1..7) {
-            lottery.add(Random.nextInt(45)+1)
-        }
         while (lottery.size < 7) {
             lottery.add(Random.nextInt(45)+1)
         }
