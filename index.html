@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joy of Mapo</title>
+    <title>[지도 WIP] Joy of Mapo * 마포의 즐거움</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,19 +12,24 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script
+      type="text/javascript"
+      src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=8de3vmlkrw"
+    ></script>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-        <a id="title" href="https://www.joyofmapo.site">마포의즐거움</a>
+    <div class="content">
+      <div class="side">
+        <div class="logo">
+          <a id="title" href="https://www.joyofmapo.site">마포의즐거움</a>
+        </div>
       </div>
-      <ul>
-        <li><a href="#">마포지도</a></li>
-        <li><a href="#">맛집정보</a></li>
-        <li><a href="#">문화관광정보</a></li>
-        <li><a href="#">문의</a></li>
-      </ul>
-    </nav>
+      <div class="mapContent">
+        <div class="line"></div>
+        <div id="map"></div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
