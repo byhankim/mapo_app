@@ -27,18 +27,19 @@ a {
 .side {
   flex: 2;
   height: 100vh;
-  background-color: cornflowerblue;
+  background-color: #fdfcfb;
+  /* background-color: cornflowerblue; */
 }
 
 .side .logo {
   height: 100px;
   padding: 20px 30px;
-  background-color: rgb(236, 221, 236);
+  /* background-color: rgb(236, 221, 236); */
 }
 
 .mapContent {
   flex: 5;
-  background-color: rgb(214, 236, 255);
+  /* background-color: rgb(214, 236, 255); */
   height: 100vh;
   display: flex;
 }
@@ -60,4 +61,10 @@ a {
     display: flex;
     flex-direction: column;
   }
+}
+
+/* mapo places */
+.side .places {
+  width: 100%;
+  height: 100vh;
 }
