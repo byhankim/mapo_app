@@ -14,3 +14,10 @@
   - 크롤링 완성
   - 4개 페이지에 대한 데이터 전처리(pandas)
   - Geocoder-Xr 툴 사용한 주소->위경도 값 구하기
+  - .shp 파일 인코딩 변환(euc-kr) 및 json 파일로 내보내기 (pandas, geopandas)
+
+### TODO
+
+- pagination
+- kakao map api로 마커 출력
+- (opt) 싱글페이지로 변신 & 헤더푸터 추가
