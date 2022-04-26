@@ -44,12 +44,6 @@ a {
   display: flex;
 }
 
-.mapContent .line {
-  width: 4px;
-  height: 100vh;
-  background-image: linear-gradient(90deg, rgb(168, 168, 168), #ddd);
-}
-
 /* map */
 .mapContent #map {
   width: 100%;
