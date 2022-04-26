@@ -12,6 +12,12 @@ body {
   font-family: "Black Han Sans", sans-serif;
   font-size: 56px;
   color: #4ad1ff;
+  transition: 0.4s;
+}
+
+#title:hover {
+  color: #3ee25f;
+  transition: 0.4s;
 }
 
 a {
