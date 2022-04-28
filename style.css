@@ -12,12 +12,14 @@ body {
   font-family: "Black Han Sans", sans-serif;
   font-size: 56px;
   color: #4ad1ff;
-  transition: 0.4s;
+  transition: 0.35s;
+  text-decoration: underline 0.1em rgba(0, 0, 0, 0);
 }
 
 #title:hover {
   color: #3ee25f;
-  transition: 0.4s;
+  transition: 0.35s;
+  text-decoration-color: rgba(62, 226, 95, 1);
 }
 
 a {
