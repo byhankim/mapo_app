@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[지도 WIP] Joy of Mapo * 마포의 즐거움</title>
+    <title>Joy of Mapo * 마포의 즐거움</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style_main.css" />
     <!-- kakao 지도-->
     <script
       type="text/javascript"
@@ -19,19 +26,62 @@
     ></script>
   </head>
   <body>
-    <div class="content">
-      <div class="side">
-        <div class="logo">
-          <a id="title" href="https://www.joyofmapo.site">마포의즐거움</a>
+    <div class="main">
+      <div id="main_video">
+        <video autoplay muted loop id="myVideo">
+          <source src="feather.mp4" type="video/mp4" />
+        </video>
+        <div class="type_effect_container">
+          <div id="dynamic" class="typed_text"></div>
         </div>
-        <div class="places"></div>
       </div>
-      <div class="mapContent">
-        <div class="line"></div>
-        <div id="map"></div>
+
+      <div id="main_carousal" class="main_carousal">안녕 마포</div>
+
+      <nav>
+        <div class="logo">
+          <a id="title" href="https://www.joyofmapo.site"
+            >마포의즐거움<span><i class="fas fa-utensils-alt"></i></span
+          ></a>
+        </div>
+        <div class="menu_container">
+          <ul>
+            <li class="menu"><a href="#main_carousal">걷고싶은마포</a></li>
+            <li class="menu"><a href="#map_area">먹고싶은마포</a></li>
+            <li class="menu"><a href="#useful_links">놀고싶은마포</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="map_area" class="__main_content">
+        <div class="side">
+          <div class="places">
+            <div class="list__container">
+              <div class="places__list"></div>
+            </div>
+            <div class="list__footer">
+              <a href="#"><i class="fas fa-angle-left"></i></a>
+              <div class="pages">
+                <a href="#" class="test_page current">1</a>
+                <a href="#" class="test_page">2</a>
+                <a href="#" class="test_page">3</a>
+                <a href="#" class="test_page">4</a>
+              </div>
+              <a href="#"><i class="fas fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="mapContent">
+          <div class="line"></div>
+          <div id="map"></div>
+        </div>
       </div>
+
+      <div id="main_play" class="__main_content">유용한 링크</div>
+
+      <footer>푸터</footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script_main.js"></script>
   </body>
 </html>
