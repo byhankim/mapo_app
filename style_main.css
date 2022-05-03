@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "MapoGoldenPier";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoGoldenPierA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* navigation */
+nav {
+  width: 100%;
+  height: 100px;
+  opacity: calc(0);
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  padding: 20px 20px;
+  transition: 0.2s;
+}
+
+nav.__visible {
+  opacity: calc(100);
+  pointer-events: all;
+  background-color: #fff;
+  transition: 0.35s;
+}
+
+nav .menu_container {
+  display: flex;
+  flex-grow: 1;
+}
+
+nav .menu_container ul {
+  width: 100%;
+  display: flex;
+  flex-direction: fow;
+  justify-content: space-evenly;
+}
+
+nav .menu_container ul li a {
+  text-decoration: none;
+}
+
+nav .logo {
+  display: flex;
+  flex-grow: 1;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav .logo #title {
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 56px;
+  color: #4ad1ff;
+  transition: 0.35s;
+  text-decoration: underline 0.1em rgba(0, 0, 0, 0);
+}
+
+nav .logo #title:hover {
+  color: #3ee25f;
+  transition: 0.35s;
+  text-decoration-color: rgba(62, 226, 95, 1);
+}
+
+/* main contents */
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* menu padding w/ offset */
+.__main_content {
+  padding: 0;
+}
+
+/* video */
+.main #main_video {
+  width: 100%;
+  height: 100vh;
+}
+
+.main #myVideo {
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+}
+
+.main #main_video .type_effect_container {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.main #main_carousal {
+  width: 100%;
+  height: 88vh;
+  background-color: #3ee25f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .type_effect_container {
+  font-family: "MapoGoldenPier";
+  font-size: 68px;
+  color: #fdfcfb;
+}
+
+.main #dynamic {
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+}
+
+.main .type_effect_container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 4px;
+  height: 100%;
+  background-color: #fdfcfb;
+}
+
+.main .type_effect_container.active::after {
+  display: none;
+}
+
+/* carousal */
+.main .main_carousal {
+  width: 100%;
+  height: 100vh;
+  background-color: aquamarine;
+}
+
+/* map */
+.main #map_area {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.side {
+  flex: 2;
+  height: 100vh;
+  background-color: #fdfcfb;
+  /* background-color: cornflowerblue; */
+}
+
+.side .logo {
+  height: 100px;
+  padding: 20px 30px;
+  /* background-color: rgb(236, 221, 236); */
+}
+
+.main .mapContent {
+  flex: 5;
+  /* background-color: rgb(214, 236, 255); */
+  height: 100vh;
+  display: flex;
+}
+
+/* map */
+.mapContent #map {
+  width: 100%;
+  height: 100vh;
+}
+
+/* mapo places */
+.side .places {
+  width: 100%;
+  height: 100vh;
+}
+
+.place__item {
+  margin: 8px 8px;
+  border: 1px solid rgb(148, 148, 148);
+  border-radius: 6px;
+}
+
+.side .places .list__footer {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  background-color: #4ad1ff;
+}
+
+.list__footer .fas {
+  font-size: 24px;
+  color: #003242;
+  margin: 8px 0;
+}
+
+.list__footer .pages {
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+}
+
+.list__footer .pages a {
+  width: 32px;
+  height: 36px;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list__footer .pages .current {
+  text-decoration: underline;
+}
+
+/* 유용한사이트 */
+.main #main_play {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  background-color: #4ad1ff;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: #003242;
+}
+
+@media (max-width: 600px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+}
