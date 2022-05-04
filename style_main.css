@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-margin-top: 79px;
 }
 
 /* 마포금빛나루체 */
@@ -82,8 +83,9 @@ nav .menu_container ul {
   font-size: 24px;
 }
 
-nav .menu_container ul li a {
+nav .menu_container ul li {
   text-decoration: none;
+  cursor: pointer;
 }
 
 nav .logo {
@@ -142,18 +144,42 @@ nav .logo #title:hover {
 }
 
 .main #main_video .arrow_down {
+  width: 60%;
+  height: 120px;
   position: absolute;
   z-index: 2;
   color: #fdfcfb;
   top: 80%;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.main #main_video .arrow_down i {
-  font-size: 100px;
-  z-index: 2;
-  color: #fdfcfb;
+.main #main_video .arrow_down i.fa-angle-down {
+  animation: upDown 2s linear infinite;
+  opacity: calc(0.9);
+}
+
+@keyframes upDown {
+  100% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  0% {
+    transform: translateY(-6px);
+  }
+}
+
+.shadow {
+  /* text-shadow: 2px 2px #ffffff88; */
+  -webkit-text-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.45);
+  text-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.45);
 }
 
 .main .type_effect_container {
@@ -239,6 +265,7 @@ nav .logo #title:hover {
   height: 84vh;
   flex-direction: row;
   margin: auto;
+  margin-bottom: 100px;
 }
 
 .main #mapo_map .food_map_area .side {

@@ -49,6 +49,33 @@ function blink() {
   document.querySelector(".type_effect_container").classList.toggle("active");
 }
 
+// arrow down 이벤트리스너
+let arrowDown = document.querySelector(".arrow_down");
+arrowDown.addEventListener("click", () => {
+  document.querySelector("#mapo_walks").scrollIntoView({
+    behavior: "smooth",
+  });
+  // window.scrollTo(0, currentVH - 80 + 1);
+});
+
+// navigation event
+let menus = document.querySelectorAll(".menu_list");
+menus[0].addEventListener("click", () => {
+  document.querySelector("#mapo_walks").scrollIntoView({
+    behavior: "smooth",
+  });
+});
+menus[1].addEventListener("click", () => {
+  document.querySelector("#mapo_map").scrollIntoView({
+    behavior: "smooth",
+  });
+});
+menus[2].addEventListener("click", () => {
+  document.querySelector("#mapo_play").scrollIntoView({
+    behavior: "smooth",
+  });
+});
+
 setTimeout(() => {
   dynamic(generateStrArr());
 }, 1100);
@@ -71,8 +98,6 @@ window.onscroll = () => {
 window.onresize = () => {
   currentVH = window.innerHeight;
 };
-
-// 메인 비디오 변경점에 따라 nav 투명화 처리
 
 const MAPOGU_OFFICE_LAT = 37.56626061717293;
 const MAPOGU_OFFICE_LNG = 126.90198620741052;
