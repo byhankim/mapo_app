@@ -208,10 +208,12 @@ nav .logo #title:hover {
   justify-content: center;
 }
 
-.main #mapo_map .map_intro .food_title {
+/* .main #mapo_map .map_intro*/
+.main_title {
   font-size: 80px;
   text-align: center;
   margin-bottom: 40px;
+  display: inline-block;
 }
 
 .main #mapo_map .map_intro .food_content {
@@ -227,10 +229,11 @@ nav .logo #title:hover {
 
 /* 지도부분 */
 .main #mapo_map .food_map_area {
-  width: 100%;
+  width: 92%;
   display: flex;
-  height: 80vh;
+  height: 84vh;
   flex-direction: row;
+  margin: auto;
 }
 
 .main #mapo_map .food_map_area .side {
@@ -265,10 +268,13 @@ nav .logo #title:hover {
 } */
 
 .place__item {
-  margin: 8px 8px;
+  margin: 8px 4px 16px 4px;
+  padding: 8px 10px;
   /* border: 1px solid rgb(148, 148, 148); */
-  border-radius: 6px;
-  filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.08));
+  border-radius: 8px;
+  /* filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.08)); */
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(55, 55, 55, 0.1);
+  box-shadow: 0px 0px 10px 2px rgba(55, 55, 55, 0.1);
 }
 
 .side .places .list__footer {
@@ -280,9 +286,11 @@ nav .logo #title:hover {
   justify-self: center;
   align-items: center;
   position: relative;
+  border-radius: 8px;
   left: 0;
   bottom: 0;
-  background-color: #4ad1ff;
+  background-color: rgb(74, 209, 255, 0.5);
+  box-shadow: 0px 0px 10px 2px rgba(55, 55, 55, 0.1);
 }
 
 .list__footer .fas {
