@@ -62,7 +62,7 @@ window.onscroll = () => {
   console.log(
     `현재 화면 높이: ${currentVH}, 현재 스크롤 위치: ${window.scrollY}, nav classname: ${nav.className}`
   );
-  if (window.scrollY > currentVH - 100.0) {
+  if (window.scrollY > currentVH - 80.0) {
     nav.className = "__visible";
     nav.style.pointerEvents = "all";
   } else {
@@ -102,8 +102,9 @@ function smoothScrollTo(lat, lng) {
 
 // places 에 리스트 추가
 // JSON 파싱해서 리스트로 넣어놓기
-
-let places = document.querySelector(".places__list");
+let placesList = document.querySelector(".places__list");
+let offset = 10;
+let currentPage = 1;
 
 const jsonData = fetch("./mapojoy_data.json")
   .then((response) => response.json())
@@ -112,6 +113,11 @@ const jsonData = fetch("./mapojoy_data.json")
   })
   .catch((error) => console.log(error));
 
+function printList() {
+  let page = jsonData.slice((currentPage - 1) * offset, currentPage * offset);
+  let coords = page.forEach((v) => {});
+}
+
 function setPlaces(stores) {
   stores.forEach((obj) => {
     let div = document.createElement("div");
@@ -119,6 +125,8 @@ function setPlaces(stores) {
     div.innerHTML = `${obj.name} - ${obj.type} - ${obj.address}<br/>`;
     div.className = "place__item";
     console.log(div);
-    places.appendChild(div);
+    placesList.appendChild(div);
   });
 }
+
+function setMarkers(stores) {}

@@ -1,3 +1,11 @@
+:root {
+  --food-tag-kr: #f5ff97;
+  --food-tag-western: #9cb8e2;
+  --food-tag-jp: #bce79f;
+  --food-tag-cn: #f8a9b7;
+  --food-tag-sea: #b6a2ff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,7 +43,7 @@ a {
 /* navigation */
 nav {
   width: 100%;
-  height: 100px;
+  height: 80px;
   opacity: calc(0);
   pointer-events: none;
   position: fixed;
@@ -49,6 +57,8 @@ nav {
   z-index: 100;
   padding: 20px 20px;
   transition: 0.2s;
+  -webkit-box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.45);
 }
 
 nav.__visible {
@@ -116,7 +126,7 @@ nav .logo #title:hover {
   height: 100vh;
 }
 
-.main #myVideo {
+.main #main_video #myVideo {
   width: 100%;
   height: 100vh;
   object-fit: fill;
@@ -144,15 +154,6 @@ nav .logo #title:hover {
   font-size: 100px;
   z-index: 2;
   color: #fdfcfb;
-}
-
-.main #main_carousal {
-  width: 100%;
-  height: 88vh;
-  background-color: #3ee25f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .main .type_effect_container {
@@ -183,57 +184,91 @@ nav .logo #title:hover {
   display: none;
 }
 
-/* carousal */
-.main .main_carousal {
+/* 걷고싶은 마포 */
+.main #mapo_walks {
   width: 100%;
-  height: 100vh;
-  background-color: aquamarine;
+  height: 90vh;
+  background-color: #3ee25f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* map */
-.main #map_area {
+/* 먹고싶은 마포 */
+.main #mapo_map {
   width: 100%;
-  height: 100vh;
+  padding: 10px 28px;
+}
+
+.main #mapo_map .map_intro {
+  width: 100%;
+  padding: 80px 20px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main #mapo_map .map_intro .food_title {
+  font-size: 80px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main #mapo_map .map_intro .food_content {
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.5em;
+}
+.main #mapo_map .map_intro .food_content .fas {
+  font-size: 60px;
+  line-height: 2em;
+  color: #003242;
+}
+
+/* 지도부분 */
+.main #mapo_map .food_map_area {
+  width: 100%;
+  display: flex;
+  height: 80vh;
   flex-direction: row;
 }
 
-.side {
-  flex: 2;
-  height: 100vh;
-  background-color: #fdfcfb;
+.main #mapo_map .food_map_area .side {
+  flex: 3;
+  /* background-color: #fdfcfb; */
   /* background-color: cornflowerblue; */
 }
 
-.side .logo {
+.main #mapo_map .food_map_area .side .logo {
   height: 100px;
   padding: 20px 30px;
   /* background-color: rgb(236, 221, 236); */
 }
 
-.main .mapContent {
+.main #mapo_map .food_map_area .mapContent {
   flex: 5;
   /* background-color: rgb(214, 236, 255); */
-  height: 100vh;
   display: flex;
 }
 
-/* map */
-.mapContent #map {
+/* kakao map div */
+.main #mapo_map .food_map_area .mapContent #map {
   width: 100%;
-  height: 100vh;
+  border-radius: 20px;
+  margin: 0 30px;
 }
 
 /* mapo places */
-.side .places {
+/* .side .places {
   width: 100%;
   height: 100vh;
-}
+} */
 
 .place__item {
   margin: 8px 8px;
-  border: 1px solid rgb(148, 148, 148);
+  /* border: 1px solid rgb(148, 148, 148); */
   border-radius: 6px;
+  filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.08));
 }
 
 .side .places .list__footer {
