@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* 마포금빛나루체 */
 @font-face {
   font-family: "MapoGoldenPier";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoGoldenPierA.woff")
@@ -12,8 +13,18 @@
   font-style: normal;
 }
 
+/* 흥국생명체 - 저작권 체크 완료 */
+@font-face {
+  font-family: "LeeSeoyun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   scroll-behavior: smooth;
+  font-family: "LeeSeoyun";
 }
 
 a {
@@ -57,6 +68,7 @@ nav .menu_container ul {
   display: flex;
   flex-direction: fow;
   justify-content: space-evenly;
+  font-size: 24px;
 }
 
 nav .menu_container ul li a {
@@ -73,7 +85,7 @@ nav ul li {
 }
 
 nav .logo #title {
-  font-family: "Black Han Sans", sans-serif;
+  font-family: "LeeSeoyun", /*"Black Han Sans", */ sans-serif;
   font-size: 56px;
   color: #4ad1ff;
   transition: 0.35s;
