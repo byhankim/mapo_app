@@ -4,6 +4,7 @@
   --food-tag-jp: #bce79f;
   --food-tag-cn: #f8a9b7;
   --food-tag-sea: #b6a2ff;
+  --mapo-blue: #4ad1ff;
 }
 
 * {
@@ -258,7 +259,7 @@ nav .logo #title:hover {
 .main #mapo_map .food_map_area .mapContent #map {
   width: 100%;
   border-radius: 20px;
-  margin: 0 30px;
+  margin: 0 0 0 30px;
 }
 
 /* mapo places */
@@ -330,8 +331,31 @@ nav .logo #title:hover {
 /* footer */
 footer {
   width: 100%;
-  height: 200px;
+  padding-top: 48px;
+  padding-bottom: 48px;
   background-color: #003242;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+footer a {
+  color: var(--mapo-blue);
+}
+
+footer .footer_logo_side .mapo_logo {
+  width: 100px;
+}
+
+footer .footer_desc {
+  padding-top: 12px;
+  font-size: 18px;
+  line-height: 1.3em;
 }
 
 @media (max-width: 600px) {

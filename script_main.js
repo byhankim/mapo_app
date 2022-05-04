@@ -5,7 +5,7 @@ let nav = document.querySelector("nav");
 
 // typed effect
 let strIdx = 0;
-let mapoArr = ["걷고 싶은 마포,", "놀고 싶은 마포,", "먹고 싶은 마포,"];
+let mapoArr = ["걷고 싶은 마포,", "먹고 싶은 마포,", "놀고 싶은 마포,"];
 
 console.log(mapoArr[strIdx].split(""));
 function generateStrArr() {
@@ -42,7 +42,7 @@ function reverseDynamic(str) {
     setTimeout(() => {
       strIdx++;
       dynamic(generateStrArr());
-    }, 1800);
+    }, 1500);
   }
 }
 
@@ -51,7 +51,9 @@ function blink() {
   document.querySelector(".type_effect_container").classList.toggle("active");
 }
 
-dynamic(generateStrArr());
+setTimeout(() => {
+  dynamic(generateStrArr());
+}, 1100);
 
 setInterval(() => {
   blink();
