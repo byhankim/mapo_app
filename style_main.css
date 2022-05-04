@@ -113,9 +113,25 @@ nav .logo #title:hover {
 .main #main_video .type_effect_container {
   position: absolute;
   z-index: 1;
-  top: 50%;
+  top: 45%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%);
+}
+
+.main #main_video .arrow_down {
+  position: absolute;
+  font-size: 100px;
+  z-index: 100;
+  color: #fdfcfb;
+  top: 80%;
+  left: 50%;
+  transform: translateY(-50%);
+}
+
+.main #main_video .arrow_down i {
+  font-size: 100px;
+  z-index: 2;
+  color: #fdfcfb;
 }
 
 .main #main_carousal {
@@ -131,6 +147,7 @@ nav .logo #title:hover {
   font-family: "MapoGoldenPier";
   font-size: 68px;
   color: #fdfcfb;
+  /* background-color: rgb(40, 40, 40, 0.4); */
 }
 
 .main #dynamic {
@@ -146,7 +163,7 @@ nav .logo #title:hover {
   top: 0;
   right: -10px;
   width: 4px;
-  height: 100%;
+  height: 68px;
   background-color: #fdfcfb;
 }
 
