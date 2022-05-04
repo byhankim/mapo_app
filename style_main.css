@@ -143,12 +143,11 @@ nav .logo #title:hover {
 
 .main #main_video .arrow_down {
   position: absolute;
-  font-size: 100px;
-  z-index: 100;
+  z-index: 2;
   color: #fdfcfb;
   top: 80%;
   left: 50%;
-  transform: translateY(-50%);
+  transform: translateX(-50%);
 }
 
 .main #main_video .arrow_down i {
@@ -222,6 +221,11 @@ nav .logo #title:hover {
   font-size: 32px;
   line-height: 1.5em;
 }
+
+.food_desc i {
+  margin-top: 50px;
+}
+
 .main #mapo_map .map_intro .food_content .fas {
   font-size: 60px;
   line-height: 2em;
@@ -320,12 +324,13 @@ nav .logo #title:hover {
   text-decoration: underline;
 }
 
-/* 유용한사이트 */
-.main #main_play {
+/* 놀고싶은 마포 */
+.main #mapo_play {
   width: 100%;
-  height: 90vh;
+  height: 1200px;
   display: flex;
   background-color: var(--mapo-blue);
+  justify-content: center;
 }
 
 /* footer */
