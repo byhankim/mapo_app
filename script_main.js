@@ -7,12 +7,10 @@ let nav = document.querySelector("nav");
 let strIdx = 0;
 let mapoArr = ["걷고 싶은 마포,", "먹고 싶은 마포,", "놀고 싶은 마포,"];
 
-console.log(mapoArr[strIdx].split(""));
 function generateStrArr() {
   if (strIdx > mapoArr.length - 1) {
     strIdx = 0;
   }
-  console.log(mapoArr[strIdx].split(""));
   return mapoArr[strIdx].split("");
 }
 
@@ -61,9 +59,6 @@ setInterval(() => {
 
 // scrolltop event 출력
 window.onscroll = () => {
-  console.log(
-    `현재 화면 높이: ${currentVH}, 현재 스크롤 위치: ${window.scrollY}, nav classname: ${nav.className}`
-  );
   if (window.scrollY > currentVH - 80.0) {
     nav.className = "__visible";
     nav.style.pointerEvents = "all";
@@ -126,7 +121,6 @@ function setPlaces(stores) {
     // div.innerHttp = `${obj.id} - ${obj.name} - ${obj.type} - ${obj.addrs}<br/>`
     div.innerHTML = `${obj.name} - ${obj.type} - ${obj.address}<br/>`;
     div.className = "place__item";
-    console.log(div);
     placesList.appendChild(div);
   });
 }

@@ -98,7 +98,7 @@ nav ul li {
 nav .logo #title {
   font-family: "LeeSeoyun", /*"Black Han Sans", */ sans-serif;
   font-size: 56px;
-  color: #4ad1ff;
+  color: var(--mapo-blue);
   transition: 0.35s;
   text-decoration: underline 0.1em rgba(0, 0, 0, 0);
 }
@@ -325,7 +325,7 @@ nav .logo #title:hover {
   width: 100%;
   height: 90vh;
   display: flex;
-  background-color: #4ad1ff;
+  background-color: var(--mapo-blue);
 }
 
 /* footer */
