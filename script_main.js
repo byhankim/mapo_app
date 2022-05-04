@@ -4,13 +4,16 @@ let currentVH = window.innerHeight;
 let nav = document.querySelector("nav");
 
 // typed effect
+let strIdx = 0;
+let mapoArr = ["걷고 싶은 마포,", "놀고 싶은 마포,", "먹고 싶은 마포,"];
 
-// 랜덤하게 string 선택하여 array로 반환
-function generateRandStr() {
-  let mapoArr = ["걷고 싶은 마포", "놀고 싶은 마포", "먹고 싶은 마포"];
-  let selectedStr = mapoArr[Math.floor(Math.random() * mapoArr.length)];
-
-  return selectedStr.split("");
+console.log(mapoArr[strIdx].split(""));
+function generateStrArr() {
+  if (strIdx > mapoArr.length - 1) {
+    strIdx = 0;
+  }
+  console.log(mapoArr[strIdx].split(""));
+  return mapoArr[strIdx].split("");
 }
 
 // 한 글자씩 텍스트 출력하는 함수
@@ -23,9 +26,23 @@ function dynamic(strArr) {
     }, 200);
   } else {
     setTimeout(() => {
-      target.textContent = "";
-      dynamic(generateRandStr());
-    }, 2500);
+      reverseDynamic(mapoArr[strIdx]);
+    }, 2000);
+  }
+}
+
+function reverseDynamic(str) {
+  let target = document.querySelector(".type_effect_container");
+  if (str.length > 0) {
+    target.textContent = str.slice(0, -1);
+    setTimeout(() => {
+      reverseDynamic(target.textContent);
+    }, 120);
+  } else {
+    setTimeout(() => {
+      strIdx++;
+      dynamic(generateStrArr());
+    }, 1800);
   }
 }
 
@@ -34,7 +51,7 @@ function blink() {
   document.querySelector(".type_effect_container").classList.toggle("active");
 }
 
-dynamic(generateRandStr());
+dynamic(generateStrArr());
 
 setInterval(() => {
   blink();
