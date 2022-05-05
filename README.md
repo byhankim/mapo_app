@@ -36,6 +36,8 @@
 
 ### TODO
 
-- pagination
-- kakao map api로 마커 출력
-- (opt) 싱글페이지로 변신 & 헤더푸터 추가
+- [ ] 걷고싶은 마포
+- [ ] 놀고싶은 마포
+- [ ] 지도 pagination
+- [ ] kakao map api로 마커 출력
+- [x] (opt) 싱글페이지로 변신 & 헤더푸터 추가
