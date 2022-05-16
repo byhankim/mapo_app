@@ -121,7 +121,7 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   let slides = document.querySelectorAll(".road");
-  let dots = document.querySelector(".dotIndicator");
+  let dots = document.querySelectorAll(".dot");
 
   if (n > slides.length) {
     slideIdx = 1;

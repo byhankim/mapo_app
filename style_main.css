@@ -279,6 +279,17 @@ nav .logo #title:hover {
   text-align: center;
 }
 
+.dot {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
 .active .dot:hover {
   background-color: #9cb8e2;
 }
