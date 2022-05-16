@@ -133,6 +133,7 @@ nav .logo #title:hover {
   width: 100%;
   height: 100vh;
   object-fit: fill;
+  animation-direction: alternate;
 }
 
 .main #main_video .type_effect_container {
@@ -211,19 +212,85 @@ nav .logo #title:hover {
 }
 
 /* 걷고싶은 마포 */
-.main #mapo_walks {
+.main_walks {
   width: 100%;
-  height: 90vh;
-  background-color: #3ee25f;
+  background-color: #f1d4e3;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* carousel */
+.maporoads_container {
+  background-color: #f8a9b7;
+  max-width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.road {
+  display: none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.5s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.road_title {
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.road_desc {
+  font-size: 16px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.active .dot:hover {
+  background-color: #9cb8e2;
 }
 
 /* 먹고싶은 마포 */
 .main #mapo_map {
   width: 100%;
   padding: 10px 28px;
+}
+
+.main #mapo_map .icons_container {
+  cursor: pointer;
 }
 
 .main #mapo_map .map_intro {

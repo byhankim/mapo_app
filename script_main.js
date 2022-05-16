@@ -99,6 +99,50 @@ window.onresize = () => {
   currentVH = window.innerHeight;
 };
 
+function scrollToMap() {
+  document.querySelector(".icons_container").scrollIntoView({
+    behavior: "smooth",
+  });
+}
+
+// ============================  걷고싶은마포  =============================
+
+let slideIdx = 1;
+showSlides(slideIdx);
+
+function moveSlides(n) {
+  showSlides((slideIdx += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIdx = n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.querySelectorAll(".road");
+  let dots = document.querySelector(".dotIndicator");
+
+  if (n > slides.length) {
+    slideIdx = 1;
+  }
+  if (n < 1) {
+    slideIdx = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIdx - 1].style.display = "block";
+  dots[slideIdx - 1].className += " active";
+}
+
+// ===================================================================
+
 const MAPOGU_OFFICE_LAT = 37.56626061717293;
 const MAPOGU_OFFICE_LNG = 126.90198620741052;
 

@@ -58,10 +58,51 @@
 
       <!-- mapo walks -->
       <div id="mapo_walks" class="main_walks">
-        <div class="main_title">걷고싶은 마포</div>
         <div class="walks_desc">
+          <iframe src="https://giphy.com/embed/xT0xeOGAGEAuQK1ujm" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
           <span><i class="fas fa-search"></i></i></span>
         </div>
+        <div class="main_title">걷고싶은 마포</div>
+        <div class="maporoads_container">
+          <div class="road">
+            <div class="road_title">01. 경의선숲길</div>
+            <img src="road-01.jpeg" alt="" />
+            <div class="road_desc">
+              <h2>경의선숲길 한번 걸어봐요!</h2>
+              <p><a href="https://post.naver.com/viewer/postView.nhn?">블로그 포스트 이동!</a></p>
+            </div>
+          </div>
+
+          <div class="road">
+            <div class="road_title">02. 아현동고갯길</div>
+            <img src="road-02-ahyeon.jpeg" alt="" />
+            <div class="road_desc">
+              <h2>아현동고갯길 한번 걸어봐요!</h2>
+              <p><a href="https://post.naver.com/viewer/postView.nhn?">블로그 포스트 이동!</a></p>
+            </div>
+          </div>
+
+          <div class="road">
+            <div class="road_title">03. 마포나루길</div>
+            <img src="road-03-maponaru.jpeg" alt="" />
+            <div class="road_desc">
+              <h2>마포나루길 한번 걸어봐요!</h2>
+              <p><a href="https://post.naver.com/viewer/postView.nhn?">블로그 포스트 이동!</a></p>
+            </div>
+          </div>
+
+          <!-- Move to Previous, Next -->
+          <a class="prev" onclick="moveSlide(-1)">&#10094</a>
+          <a class="next" onclick="moveSlide(1)">&#10095</a>
+
+        </div>
+
+        <!-- Dot indicators -->
+        <div class="dotIndicator" style="text-align: center;">
+          <span class="dot" onclick="moveToSlide(0)"></span>
+          <span class="dot" onclick="moveToSlide(1)"></span>
+          <span class="dot" onclick="moveToSlide(2)"></span>
+        </div> 
       </div>
 
       <!-- mapo food map -->
@@ -69,11 +110,15 @@
         <div class="map_intro">
           <div class="main_title">먹고싶은 마포</div>
           <div class="food_content">
-            <p class="food_desc">
+            <p class="food_desc">ㅏ
               맛집 많기로 유명한 마포!<br />
               <span style="color: #4ad1ff">마포구청/서울시청/관광협회</span>에서
               인정한 꿀맛집 찾아볼까요?<br />
-              <i class="fas fa-map"></i>  <i class="fas fa-search"></i>
+              <div class="icons_container">
+                <i class="fas fa-map"></i>
+                <i class="fas fa-search"></i>
+              </div>
+              
             </p>
           </div>
         </div>
