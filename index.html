@@ -58,18 +58,18 @@
 
       <!-- mapo walks -->
       <div id="mapo_walks" class="main_walks">
-        <div class="walks_desc">
+        <div class="main_title">걷고싶은 마포</div>
+        <!-- <div class="walks_desc">
           <iframe src="https://giphy.com/embed/xT0xeOGAGEAuQK1ujm" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
           <span><i class="fas fa-search"></i></i></span>
-        </div>
-        <div class="main_title">걷고싶은 마포</div>
+        </div> -->
         <div class="maporoads_container">
           <div class="road">
             <div class="road_title">01. 경의선숲길</div>
             <img src="road-01.jpeg" alt="" />
             <div class="road_desc">
               <h2>경의선숲길 한번 걸어봐요!</h2>
-              <p><a href="https://post.naver.com/viewer/postView.nhn?">블로그 포스트 이동!</a></p>
+              <p><a href="https://post.naver.com/viewer/postView.nhn?volumeNo=28479090&memberNo=15792726&vType=VERTICAL">블로그 포스트 이동!</a></p>
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <img src="road-02-ahyeon.jpeg" alt="" />
             <div class="road_desc">
               <h2>아현동고갯길 한번 걸어봐요!</h2>
-              <p><a href="https://post.naver.com/viewer/postView.nhn?">블로그 포스트 이동!</a></p>
+              <p><a href="https://post.naver.com/viewer/postView.nhn?volumeNo=28479076&memberNo=15792726">블로그 포스트 이동!</a></p>
             </div>
           </div>
 
@@ -87,21 +87,23 @@
             <img src="road-03-maponaru.jpeg" alt="" />
             <div class="road_desc">
               <h2>마포나루길 한번 걸어봐요!</h2>
-              <p><a href="https://post.naver.com/viewer/postView.nhn?">블로그 포스트 이동!</a></p>
+              <p><a href="https://blog.naver.com/prmapo77/222140693018">블로그 포스트 이동!</a></p>
             </div>
           </div>
 
           <!-- Move to Previous, Next -->
-          <a class="prev" onclick="moveSlides(-1)">&#10094</a>
-          <a class="next" onclick="moveSlides(1)">&#10095</a>
+          <div class="prevNextContainer">
+            <a class="prev" onclick="moveSlides(-1)">&#10094</a>
+            <a class="next" onclick="moveSlides(1)">&#10095</a>
+          </div>
 
         </div>
 
         <!-- Dot indicators -->
         <div class="dotIndicator" style="text-align: center;">
-          <span class="dot" onclick="moveSlides(0)"></span>
-          <span class="dot" onclick="moveSlides(1)"></span>
-          <span class="dot" onclick="moveSlides(2)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
         </div> 
       </div>
 
