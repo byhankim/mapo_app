@@ -33,6 +33,10 @@
 - 5:
   - 첫화면 아래 화살표 추가 및 애니메이션 적용
   - navbar 오프셋 보정용 scroll-margin-top 처리
+- 9, 11~12, 16:
+  - 걷고싶은 마포 carousel 처리
+  - carousel css 및 js 처리
+  - restructure
 
 ### TODO
 
