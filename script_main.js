@@ -178,15 +178,45 @@ let currentPage = 1;
 const jsonData = fetch("./mapojoy_data.json")
   .then((response) => response.json())
   .then((jsonData) => {
-    let slicedArr = jsonData.slice(0, 10);
-    setPlaces(slicedArr);
-    setMarkersAll(slicedArr);
+    // let slicedArr = jsonData.slice(0, 10);
+    setupPages(jsonData);
   })
   .catch((error) => console.log(error));
 
 /**
  * pagination
  */
+function setupPages(data) {
+  let totalPage = Math.round(data.length / 10);
+
+  for (let i = 0; i < totalPage; i++) {
+    let aTag = document.createElement("a");
+
+    aTag.className = "test_page";
+    aTag.innerText = i + 1;
+    aTag.onclick = () => {
+      currentPage = i + 1;
+      offset = currentPage * 10;
+      let slicedArr =
+        i < totalPage - 1
+          ? data.slice(offset, offset + 10)
+          : data.slice(offset);
+      console.log("slicedArr:", slicedArr);
+      setPlaces(slicedArr);
+      setMarkersAll(slicedArr);
+    };
+
+    pageBar.appendChild(aTag);
+  }
+}
+
+// 초기화
+let refreshPlacesList = () => {
+  while (pageBar.firstChild) {
+    pageBar.removeChild(pageBar.firstChild);
+  }
+};
+
 // page bar
 let pageBar = document.querySelector(".pages");
 
@@ -196,12 +226,8 @@ let pageBar = document.querySelector(".pages");
 
 // -----------------------------
 
-function movePage() {
-  let page = jsonData.slice((currentPage - 1) * offset, currentPage * offset);
-  let coords = page.forEach((v) => {});
-}
-
 function setPlaces(stores) {
+  refreshPlacesList();
   stores.forEach((obj) => {
     let div = document.createElement("div");
     // div.innerHttp = `${obj.id} - ${obj.name} - ${obj.type} - ${obj.addrs}<br/>`

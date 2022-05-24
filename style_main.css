@@ -460,6 +460,10 @@ nav .logo #title:hover {
   justify-content: center;
 }
 
+.list__footer .pages a:hover {
+  cursor: pointer;
+}
+
 .list__footer .pages .current {
   text-decoration: underline;
 }
