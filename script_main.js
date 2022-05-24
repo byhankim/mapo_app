@@ -61,17 +61,17 @@ arrowDown.addEventListener("click", () => {
 // navigation event
 let menus = document.querySelectorAll(".menu_list");
 menus[0].addEventListener("click", () => {
-  document.querySelector("#mapo_walks").scrollIntoView({
+  document.querySelector("#main_video").scrollIntoView({
     behavior: "smooth",
   });
 });
 menus[1].addEventListener("click", () => {
-  document.querySelector("#mapo_map").scrollIntoView({
+  document.querySelector("#mapo_walks").scrollIntoView({
     behavior: "smooth",
   });
 });
 menus[2].addEventListener("click", () => {
-  document.querySelector("#mapo_play").scrollIntoView({
+  document.querySelector("#mapo_map").scrollIntoView({
     behavior: "smooth",
   });
 });
@@ -151,7 +151,7 @@ let container = document.getElementById("map"); //지도를 담을 영역의 DOM
 let options = {
   //지도를 생성할 때 필요한 기본 옵션
   center: new kakao.maps.LatLng(MAPOGU_OFFICE_LAT, MAPOGU_OFFICE_LNG), //지도의 중심좌표.
-  // draggable: false, // 마우스 휠 드래그 막기
+  draggable: false, // 마우스 휠 드래그 막기
   level: 5, //지도의 레벨(확대, 축소 정도)
 };
 
