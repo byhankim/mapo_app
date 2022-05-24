@@ -37,6 +37,11 @@
   - 걷고싶은 마포 carousel 처리
   - carousel css 및 js 처리
   - restructure
+- 24:
+  - 놀고싶은마포 temporarily disabled & Home 추가
+  - 걷고싶은마포 carousel 10개 아이템 완성
+  - nav 스크롤 처리
+  - 마커 10개 출력
 
 ### TODO
 
