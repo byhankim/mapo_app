@@ -157,9 +157,6 @@ let options = {
 
 let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-// bound 객체
-let bounds = new kakao.maps.LatLngBounds();
-
 function setLocation(lat, lng) {
   let newLocation = new kakao.maps.LatLng(lat, lng);
   map.setCenter(newLocation);
@@ -184,11 +181,22 @@ const jsonData = fetch("./mapojoy_data.json")
     let slicedArr = jsonData.slice(0, 10);
     setPlaces(slicedArr);
     setMarkersAll(slicedArr);
-    // 지도 zoom resize
   })
   .catch((error) => console.log(error));
 
-function printList() {
+/**
+ * pagination
+ */
+// page bar
+let pageBar = document.querySelector(".pages");
+
+// page bar && dynamically add children (max 5)
+
+//
+
+// -----------------------------
+
+function movePage() {
   let page = jsonData.slice((currentPage - 1) * offset, currentPage * offset);
   let coords = page.forEach((v) => {});
 }
@@ -205,6 +213,7 @@ function setPlaces(stores) {
 
 function setMarkersAll(stores) {
   let areas = [];
+  let bounds = new kakao.maps.LatLngBounds();
 
   // 마커를 표시할 위치와 title 객체 배열입니다
   for (let i = 0; i < stores.length; i++) {
@@ -212,8 +221,6 @@ function setMarkersAll(stores) {
       title: stores[i].name,
       latlng: new kakao.maps.LatLng(stores[i].cy, stores[i].cx),
     };
-    // bounds 추가
-    bounds.extend(tempObj.latlng);
     areas.push(tempObj);
   }
 
@@ -222,6 +229,8 @@ function setMarkersAll(stores) {
     "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
   for (let i = 0; i < areas.length; i++) {
+    // bound 객체
+
     // 마커 이미지의 이미지 크기 입니다
     let imageSize = new kakao.maps.Size(24, 35);
 
@@ -237,6 +246,8 @@ function setMarkersAll(stores) {
     });
 
     // marker.setup(map);
+    // bounds 추가
+    bounds.extend(areas[i].latlng);
   }
 
   // bounds done
