@@ -152,10 +152,13 @@ let options = {
   //지도를 생성할 때 필요한 기본 옵션
   center: new kakao.maps.LatLng(MAPOGU_OFFICE_LAT, MAPOGU_OFFICE_LNG), //지도의 중심좌표.
   // draggable: false, // 마우스 휠 드래그 막기
-  level: 8, //지도의 레벨(확대, 축소 정도)
+  level: 5, //지도의 레벨(확대, 축소 정도)
 };
 
 let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+// bound 객체
+let bounds = new kakao.maps.LatLngBounds();
 
 function setLocation(lat, lng) {
   let newLocation = new kakao.maps.LatLng(lat, lng);
@@ -181,7 +184,7 @@ const jsonData = fetch("./mapojoy_data.json")
     let slicedArr = jsonData.slice(0, 10);
     setPlaces(slicedArr);
     setMarkersAll(slicedArr);
-    console.log("====End of Marker====");
+    // 지도 zoom resize
   })
   .catch((error) => console.log(error));
 
@@ -209,9 +212,10 @@ function setMarkersAll(stores) {
       title: stores[i].name,
       latlng: new kakao.maps.LatLng(stores[i].cy, stores[i].cx),
     };
+    // bounds 추가
+    bounds.extend(tempObj.latlng);
     areas.push(tempObj);
   }
-  console.log(areas);
 
   // 마커 이미지의 이미지 주소입니다
   let imageSrc =
@@ -235,22 +239,6 @@ function setMarkersAll(stores) {
     // marker.setup(map);
   }
 
-  /*stores.forEach((obj) => {
-    console.log(obj.cx, obj.cy);
-
-    // 마커가 표시될 위치입니다
-    let markerPosition = new kakao.maps.LatLng(obj.cx, obj.cy);
-
-    // 마커를 생성합니다
-    let marker = new kakao.maps.Marker({
-      position: markerPosition,
-    });
-
-    // 마커가 지도 위에 표시되도록 설정합니다
-    marker.setMap(map);
-
-    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-    // marker.setMap(null);
-  });
-  */
+  // bounds done
+  map.setBounds(bounds);
 }
