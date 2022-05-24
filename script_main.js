@@ -141,7 +141,7 @@ function showSlides(n) {
   dots[slideIdx - 1].className += " active";
 }
 
-// ===================================================================
+// ============================  지도  =============================
 
 const MAPOGU_OFFICE_LAT = 37.56626061717293;
 const MAPOGU_OFFICE_LNG = 126.90198620741052;
@@ -151,6 +151,7 @@ let container = document.getElementById("map"); //지도를 담을 영역의 DOM
 let options = {
   //지도를 생성할 때 필요한 기본 옵션
   center: new kakao.maps.LatLng(MAPOGU_OFFICE_LAT, MAPOGU_OFFICE_LNG), //지도의 중심좌표.
+  draggable: false, // 마우스 휠 드래그 막기
   level: 3, //지도의 레벨(확대, 축소 정도)
 };
 
