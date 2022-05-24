@@ -38,6 +38,7 @@
   - carousel css 및 js 처리
   - restructure
 - 24:
+  - 지도 API 적용: wheel drabble option disabled, set markers (first 10 stores)
   - 놀고싶은마포 temporarily disabled & Home 추가
   - 걷고싶은마포 carousel 10개 아이템 완성
   - nav 스크롤 처리

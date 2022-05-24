@@ -151,7 +151,7 @@ let container = document.getElementById("map"); //지도를 담을 영역의 DOM
 let options = {
   //지도를 생성할 때 필요한 기본 옵션
   center: new kakao.maps.LatLng(MAPOGU_OFFICE_LAT, MAPOGU_OFFICE_LNG), //지도의 중심좌표.
-  draggable: false, // 마우스 휠 드래그 막기
+  // draggable: false, // 마우스 휠 드래그 막기
   level: 3, //지도의 레벨(확대, 축소 정도)
 };
 
@@ -167,8 +167,10 @@ function smoothScrollTo(lat, lng) {
   map.panTo(newLocation);
 }
 
-// places 에 리스트 추가
-// JSON 파싱해서 리스트로 넣어놓기
+/**
+ * places 에 리스트 추가
+ * JSON 파싱해서 리스트로 넣어놓기
+ */
 let placesList = document.querySelector(".places__list");
 let offset = 10;
 let currentPage = 1;
@@ -176,7 +178,9 @@ let currentPage = 1;
 const jsonData = fetch("./mapojoy_data.json")
   .then((response) => response.json())
   .then((jsonData) => {
-    setPlaces(jsonData.slice(0, 10));
+    let slicedArr = jsonData.slice(0, 10);
+    setPlaces(slicedArr);
+    setMarkersAll(slicedArr);
   })
   .catch((error) => console.log(error));
 
@@ -195,4 +199,58 @@ function setPlaces(stores) {
   });
 }
 
-function setMarkers(stores) {}
+function setMarkersAll(stores) {
+  console.log("aa");
+
+  let areas = [];
+
+  // 마커를 표시할 위치와 title 객체 배열입니다
+  for (let i = 0; i < stores.length; i++) {
+    let tempObj = {
+      title: stores[i].name,
+      latlng: new kakao.maps.LatLng(stores[i].cx, stores[i].cy),
+    };
+    areas.push(tempObj);
+  }
+
+  // 마커 이미지의 이미지 주소입니다
+  let imageSrc =
+    "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+  for (let i = 0; i < areas.length; i++) {
+    // 마커 이미지의 이미지 크기 입니다
+    let imageSize = new kakao.maps.Size(24, 35);
+
+    // 마커 이미지를 생성합니다
+    let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+    // 마커를 생성합니다
+    let marker = new kakao.maps.Marker({
+      map: map, // 마커를 표시할 지도
+      position: areas[i].latlng, // 마커를 표시할 위치
+      title: areas[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+      image: markerImage, // 마커 이미지
+    });
+
+    marker.setup(map);
+  }
+
+  /*stores.forEach((obj) => {
+    console.log(obj.cx, obj.cy);
+
+    // 마커가 표시될 위치입니다
+    let markerPosition = new kakao.maps.LatLng(obj.cx, obj.cy);
+
+    // 마커를 생성합니다
+    let marker = new kakao.maps.Marker({
+      position: markerPosition,
+    });
+
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(map);
+
+    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+    // marker.setMap(null);
+  });
+  */
+}
