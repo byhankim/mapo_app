@@ -151,7 +151,7 @@ let container = document.getElementById("map"); //지도를 담을 영역의 DOM
 let options = {
   //지도를 생성할 때 필요한 기본 옵션
   center: new kakao.maps.LatLng(MAPOGU_OFFICE_LAT, MAPOGU_OFFICE_LNG), //지도의 중심좌표.
-  draggable: false, // 마우스 휠 드래그 막기
+  // draggable: false, // 마우스 휠 드래그 막기
   level: 5, //지도의 레벨(확대, 축소 정도)
 };
 
@@ -172,6 +172,7 @@ function smoothScrollTo(lat, lng) {
  * JSON 파싱해서 리스트로 넣어놓기
  */
 let placesList = document.querySelector(".places__list");
+let markers = [];
 let offset = 10;
 let currentPage = 1;
 
@@ -243,6 +244,7 @@ function setPlaces(stores) {
 function setMarkersAll(stores) {
   let areas = [];
   let bounds = new kakao.maps.LatLngBounds();
+  hideMarkers();
 
   // 마커를 표시할 위치와 title 객체 배열입니다
   for (let i = 0; i < stores.length; i++) {
@@ -258,8 +260,6 @@ function setMarkersAll(stores) {
     "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
   for (let i = 0; i < areas.length; i++) {
-    // bound 객체
-
     // 마커 이미지의 이미지 크기 입니다
     let imageSize = new kakao.maps.Size(24, 35);
 
@@ -274,11 +274,24 @@ function setMarkersAll(stores) {
       image: markerImage, // 마커 이미지
     });
 
-    // marker.setup(map);
+    marker.setMap(map);
+    markers.push(marker);
     // bounds 추가
     bounds.extend(areas[i].latlng);
   }
 
   // bounds done
   map.setBounds(bounds);
+}
+
+function hideMarkers() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+}
+
+function showMarkers() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
 }
