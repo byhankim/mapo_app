@@ -181,6 +181,9 @@ const jsonData = fetch("./mapojoy_data.json")
   .then((jsonData) => {
     // let slicedArr = jsonData.slice(0, 10);
     setupPages(jsonData);
+
+    console.log("first: ", jsonData.slice(0, 10));
+    console.log("2nd: ", jsonData.slice(10, 20));
   })
   .catch((error) => console.log(error));
 
@@ -191,13 +194,13 @@ function setupPages(data) {
   let totalPage = Math.round(data.length / 10);
   let aList = [];
 
-  for (let i = 0; i < totalPage; i++) {
+  for (let i = 0; i < 10; i++) {
     let aTag = document.createElement("a");
 
     aTag.className = "test_page";
     aTag.innerText = i + 1;
     aTag.onclick = () => {
-      currentPage = i + 1;
+      currentPage = i;
       offset = currentPage * 10;
       let slicedArr =
         i < totalPage - 1
