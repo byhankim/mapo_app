@@ -179,11 +179,10 @@ let currentPage = 1;
 const jsonData = fetch("./mapojoy_data.json")
   .then((response) => response.json())
   .then((jsonData) => {
-    // let slicedArr = jsonData.slice(0, 10);
+    let slicedArr = jsonData.slice(0, 10);
     setupPages(jsonData);
-
-    console.log("first: ", jsonData.slice(0, 10));
-    console.log("2nd: ", jsonData.slice(10, 20));
+    setPlaces(slicedArr);
+    setMarkersAll(slicedArr);
   })
   .catch((error) => console.log(error));
 
