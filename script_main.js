@@ -188,6 +188,7 @@ const jsonData = fetch("./mapojoy_data.json")
  */
 function setupPages(data) {
   let totalPage = Math.round(data.length / 10);
+  let aList = [];
 
   for (let i = 0; i < totalPage; i++) {
     let aTag = document.createElement("a");
@@ -202,18 +203,21 @@ function setupPages(data) {
           ? data.slice(offset, offset + 10)
           : data.slice(offset);
       console.log("slicedArr:", slicedArr);
+
+      refreshPlacesList();
       setPlaces(slicedArr);
       setMarkersAll(slicedArr);
     };
 
     pageBar.appendChild(aTag);
+    aList.push(aTag);
   }
 }
 
 // 초기화
 let refreshPlacesList = () => {
-  while (pageBar.firstChild) {
-    pageBar.removeChild(pageBar.firstChild);
+  while (placesList.firstChild) {
+    placesList.removeChild(placesList.firstChild);
   }
 };
 
@@ -227,7 +231,6 @@ let pageBar = document.querySelector(".pages");
 // -----------------------------
 
 function setPlaces(stores) {
-  refreshPlacesList();
   stores.forEach((obj) => {
     let div = document.createElement("div");
     // div.innerHttp = `${obj.id} - ${obj.name} - ${obj.type} - ${obj.addrs}<br/>`
