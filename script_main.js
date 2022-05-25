@@ -157,6 +157,16 @@ let options = {
 
 let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
+/**
+ * 지도로 이동하는 부분
+ */
+let searchIcons = document.querySelector(".icons_container");
+searchIcons.addEventListener("click", () => {
+  document.querySelector(".food_map_area").scrollIntoView({
+    behavior: "smooth",
+  });
+});
+
 function setLocation(lat, lng) {
   let newLocation = new kakao.maps.LatLng(lat, lng);
   map.setCenter(newLocation);
@@ -226,11 +236,6 @@ let refreshPlacesList = () => {
 
 // page bar
 let pageBar = document.querySelector(".pages");
-
-// page bar && dynamically add children (max 5)
-
-//
-
 // -----------------------------
 
 function setPlaces(stores) {
